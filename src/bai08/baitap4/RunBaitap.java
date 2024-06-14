@@ -13,7 +13,7 @@ public class RunBaitap {
         System.out.println(kyBinh);
         KyBinh kyBinh2 = (KyBinh) kyBinh.clone();
         kyBinh2.setMaKyBinh(43859);
-        kyBinh2.getDsvk().getFirst().setTenVuKhi("Nguyễn Văn Sơn");
+//        kyBinh2.getDsvk().getFirst().setTenVuKhi("Nguyễn Văn Sơn");
         System.out.println(kyBinh2);
         System.out.println(kyBinh);
     }
