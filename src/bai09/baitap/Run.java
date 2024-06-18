@@ -15,9 +15,10 @@ public class Run {
 
 
         LopHoc lopHoc = new LopHoc("CNTT");
-//        SinhVien sinhVien = new SinhVien("Nguyeenx van sonw", lopHoc);
-//        sinhVien.addHoaDon(hoaDon);
-        SinhVien sinhVien = new SinhVien("Nguyeenx van son", lopHoc);
+        SinhVien sinhVien = new SinhVien("Nguyeenx van sonw", lopHoc);
+        sinhVien.addHoaDon(hoaDon);
+        SinhVien sinhVien1 = new SinhVien("Nguyeenx van son", lopHoc);
+        sinhVien1.addHoaDon(hoaDon);
 //        lopHoc.addSinhVien(sinhVien);
 
         System.out.println(sinhVien);

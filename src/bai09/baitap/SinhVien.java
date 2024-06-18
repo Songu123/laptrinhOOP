@@ -14,7 +14,7 @@ public class SinhVien implements Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new RuntimeException(e);
         }
-        this.dshd = dshd;
+        this.dshd = new ArrayList<>();
     }
 
     public void addHoaDon(HoaDon hd){
