@@ -7,10 +7,9 @@ import bai10.model3.HinhVuong;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
-public class SoSanhDienTich {
+public class SoSanhDienTichVer2 {
     public static void main(String[] args) {
         List<HinhHoc> dshh = new ArrayList<>();
         dshh.add(new HinhVuong(4));
