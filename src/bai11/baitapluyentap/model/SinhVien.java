@@ -1,9 +1,9 @@
-package bai11.baitap07.model;
+package bai11.baitapluyentap.model;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SinhVien implements Cloneable {
+public class SinhVien {
     private String hoTen;
     private LopHoc lop;
     private List<HoaDon> dshd;
@@ -15,12 +15,7 @@ public class SinhVien implements Cloneable {
     }
 
     public void addHoaDon(HoaDon hd){
-        try {
-            HoaDon tam = (HoaDon) hd.clone();
-            this.dshd.add(tam);
-        } catch (CloneNotSupportedException e) {
-            throw new RuntimeException(e);
-        }
+        this.dshd.add(hd);
     }
     public String getHoTen() {
         return hoTen;
@@ -38,16 +33,19 @@ public class SinhVien implements Cloneable {
         this.lop = lop;
     }
 
+    public List<HoaDon> getDshd() {
+        return dshd;
+    }
+
+    public void setDshd(List<HoaDon> dshd) {
+        this.dshd = dshd;
+    }
+
     @Override
     public String toString() {
         return "SinhVien{" +
                 "hoTen='" + hoTen + '\'' +
                 ", lop=" + lop +
                 '}';
-    }
-
-    @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
     }
 }

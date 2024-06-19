@@ -1,4 +1,4 @@
-package bai11.baitap07.model;
+package bai11.baitapluyentap.model;
 
 import java.util.ArrayList;
 import java.util.List;

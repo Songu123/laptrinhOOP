@@ -1,19 +1,14 @@
-package bai11.baitap07.model;
+package bai11.baitapluyentap.model;
 
 import java.util.ArrayList;
 
-public class HoaDon implements Cloneable{
+public class HoaDon {
     private int soHoaDon;
     private SinhVien sinhVien;
     private ArrayList<SanPham> dssp;
 
     public HoaDon(int soHoaDon, SinhVien sinhVien) {
         this.setSoHoaDon(soHoaDon);
-        try {
-            this.sinhVien = (SinhVien) sinhVien.clone();
-        } catch (CloneNotSupportedException e) {
-            throw new RuntimeException(e);
-        }
         this.dssp = new ArrayList<SanPham>();
     }
 
@@ -49,10 +44,5 @@ public class HoaDon implements Cloneable{
                 "soHoaDon=" + soHoaDon +
                 ", dssp=" + dssp +
                 '}';
-    }
-
-    @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
     }
 }

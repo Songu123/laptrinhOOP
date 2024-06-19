@@ -1,4 +1,4 @@
-package bai11.baitap07.model;
+package bai11.baitapluyentap.model;
 
 public class Laptop extends SanPham{
     private int ram;
