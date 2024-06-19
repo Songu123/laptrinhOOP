@@ -1,4 +1,6 @@
-package bai11.baitap07.model;
+package bai11;
+
+import bai11.baitapluyentap.model.*;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -6,7 +8,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Run {
+public class RunBaiTap {
     public static void main(String[] args) {
 //        Danh sách xe hơi
         List<XeHoi> xeHoiList = new ArrayList<>();
@@ -59,7 +61,7 @@ public class Run {
         HoaDon hoaDon1 = new HoaDon(235, sinhVien1);
         HoaDon hoaDon2 = new HoaDon(100, sinhVien2);
 
-        SanPham sp1 = new SanPham(123, "Xe đạp", 8, 9000);
+        SanPham sp1 = new SanPham(123, "Se đạp", 8, 9000);
         SanPham sp2 = new SanPham(123, "Xe máy", 8, 1000);
         SanPham sp3 = new SanPham(123, "Xe oto", 8, 300000);
         SanPham sp4 = new SanPham(123, "Xe điện", 8, 10000);
@@ -108,7 +110,8 @@ public class Run {
         }
 
 //       Tìm kiếm sản phẩm có giá cao nhất trong từng Hoá đơn của từng Sinh Viên
-        SanPham sanPham1Max = Collections.max(hoaDon1.getDssp(), new Comparator<SanPham>() {
+        List<SanPham> dssp = sinhVien1.getDshd().get(0).getDssp();
+        SanPham sanPham1Max = Collections.max(dssp, new Comparator<SanPham>() {
             @Override
             public int compare(SanPham o1, SanPham o2) {
                 return Double.compare(o1.getGiaCa(), o2.getGiaCa());
@@ -119,7 +122,7 @@ public class Run {
         System.out.println("Sản phẩm có giá cao nhất của " + sinhVien1 + " là: ");
         System.out.println(sanPham1Max);
 
-        SanPham sanPham2Max = Collections.max(hoaDon2.getDssp(), new Comparator<SanPham>() {
+        SanPham sanPham2Max = Collections.max(dssp, new Comparator<SanPham>() {
             @Override
             public int compare(SanPham o1, SanPham o2) {
                 return Double.compare(o1.getGiaCa(), o2.getGiaCa());
@@ -132,7 +135,7 @@ public class Run {
 
 //      Liệt kê các Sản phẩm của từng hoá đơn theo điều kiện thanhtien >=1000 và soluon <=5
 
-        List<SanPham> locSanPham = hoaDon1.getDssp().stream()
+        List<SanPham> locSanPham = dssp.stream()
                 .filter(sanPham -> sanPham.getGiaCa() >= 1000)
                 .filter(sanPham -> sanPham.getSoLuong() <= 10)
                 .collect(Collectors.toList());
@@ -147,7 +150,7 @@ public class Run {
 
 
 //      Liệt kê các Sản phẩm của từng hoá đơn theo điều kiện tên sản phẩm bắt đầu bằng ký tự "S"
-        List<SanPham> sanPhamTheoDieuKien = hoaDon1.getDssp().stream()
+        List<SanPham> sanPhamTheoDieuKien = dssp.stream()
                 .filter(sanPham -> sanPham.getTenSanPham().charAt(0) == 'S')
                 .collect(Collectors.toList());
 

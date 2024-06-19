@@ -1,4 +1,4 @@
-package bai11.baitap07.model;
+package bai11.baitapluyentap.model;
 
 import java.util.ArrayList;
 
@@ -12,13 +12,7 @@ public class LopHoc {
     }
 
     public void addSinhVien(SinhVien sv){
-        SinhVien tam = null;
-        try {
-            tam = (SinhVien) sv.clone();
-        } catch (CloneNotSupportedException e) {
-            throw new RuntimeException(e);
-        }
-        this.dssv.add(tam);
+        this.dssv.add(sv);
     }
 
     public String getTenLop() {
@@ -27,6 +21,16 @@ public class LopHoc {
 
     public void setTenLop(String tenLop) {
         this.tenLop = tenLop;
+    }
+
+    public ArrayList<SinhVien> getDssv() {
+        return dssv;
+    }
+
+    public void setDssv(ArrayList<SinhVien> dssv) {
+        for (SinhVien item: dssv){
+            this.dssv.add(item);
+        }
     }
 
     @Override

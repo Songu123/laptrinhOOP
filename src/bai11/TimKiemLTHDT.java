@@ -96,6 +96,7 @@ public class TimKiemLTHDT {
                 return sinhVien.getTuoi() >= 18 && sinhVien.getTuoi() <= 20;
             }
         };
+
 //      Phép toán OR kết hợp Stream và filter
         List<SinhVien> dskq = listSV.stream()
                 .filter(dk_dtb.or(dk_tuoi))
