@@ -52,7 +52,7 @@ public class TimKiemLTHDT {
 
         System.out.println("--------------------");
 //      Tìm kiếm sinh viên đầu tiên có tên là "Nguyễn Văn Sơn"
-        int sinhVienBinh = Collections.binarySearch(listSV, new SinhVien("Nguyễn Văn Sơn", 0, 0), new Comparator<SinhVien>() {
+        int sinhVienBinh = Collections.binarySearch(listSV, new SinhVien("Nguyễn Văn Tuấn", 0, 0), new Comparator<SinhVien>() {
             @Override
             public int compare(SinhVien o1, SinhVien o2) {
                 return o1.getTen().compareTo(o2.getTen());
