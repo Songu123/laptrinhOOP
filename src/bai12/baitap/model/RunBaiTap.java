@@ -41,23 +41,6 @@ public class RunBaiTap {
         listNhanVat.add(nv2);
         listNhanVat.add(nv3);
 
-        NhanVat target = new NhanVat("Nguyễn Bảo Hành", 453, 150); // Dummy object for comparison
-        int viTriNhanVat = Collections.binarySearch(listNhanVat, target, new Comparator<NhanVat>() {
-            @Override
-            public int compare(NhanVat o1, NhanVat o2) {
-                return o1.getTen().compareTo(o2.getTen());
-            }
-        });
-        if (viTriNhanVat < 0){
-            System.out.println("Không tìm thấy sinh viên!");
-        }else {
-            System.out.println("Sinh viên nằm ở vị trí: " + viTriNhanVat);
-        }
-
-        for (VuKhi vk: nv1.getListVuKhi()){
-            System.out.println(vk);
-        }
-
 
 
 //        Sap xep list Nhan Vat theo luong Mau
@@ -85,6 +68,25 @@ public class RunBaiTap {
         System.out.println("--------------------");
 //      Tìm kiếm sinh viên có tên "Nguyen Van Son"
 
+        NhanVat target = new NhanVat("Nguyễn Bảo Hành", 453, 150); // Dummy object for comparison
+        int viTriNhanVat = Collections.binarySearch(listNhanVat, target, new Comparator<NhanVat>() {
+            @Override
+            public int compare(NhanVat o1, NhanVat o2) {
+                return o1.getTen().compareTo(o2.getTen());
+            }
+        });
+        if (viTriNhanVat < 0){
+            System.out.println("Không tìm thấy sinh viên!");
+        }else {
+            System.out.println("Sinh viên nằm ở vị trí: " + viTriNhanVat);
+        }
+
+        for (VuKhi vk: nv1.getListVuKhi()){
+            System.out.println(vk);
+        }
+
+
+//        Nhap du lieu cho doi tuong Binh Đoàn
         BinhDoan binhDoan = new BinhDoan(1200, 3000);
         binhDoan.addDoiQuan(new DoiQuan("Nguyen Van Sonw", new BinhDoan(1200, 4000)));
         binhDoan.addDoiQuan(new DoiQuan("Nguyen Tran Trung Quan", new BinhDoan(3000, 4000)));
